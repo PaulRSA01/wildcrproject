@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { addEnquiry } from "@/lib/enquiries";
 import {
   addBooking,
   addCustomer,
@@ -21,7 +22,7 @@ import type {
 const str = (v: FormDataEntryValue | null) => String(v ?? "").trim();
 const num = (v: FormDataEntryValue | null) => Number(v ?? 0) || 0;
 
-const refresh = () => revalidatePath("/", "layout");
+const refresh = () => revalidatePath("/admin", "layout");
 
 export async function createTourAction(formData: FormData) {
   addTour({
@@ -55,7 +56,7 @@ export async function createDepartureAction(formData: FormData) {
     guideName: str(formData.get("guideName")) || "TBD",
   });
   refresh();
-  redirect(`/tours/${tourId}`);
+  redirect(`/admin/tours/${tourId}`);
 }
 
 export async function createCustomerAction(formData: FormData) {
@@ -78,7 +79,7 @@ export async function createBookingAction(formData: FormData) {
   }
   const booking = addBooking({ customerId, departureId, partySize });
   refresh();
-  redirect(`/bookings/${booking.id}`);
+  redirect(`/admin/bookings/${booking.id}`);
 }
 
 export async function changeBookingStatusAction(
@@ -103,4 +104,36 @@ export async function changeDepartureStatusAction(
 ) {
   setDepartureStatus(id, status);
   refresh();
+}
+
+/* --------------------------- public enquiries --------------------------- */
+
+export type EnquiryState = { ok: boolean; error?: string };
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export async function submitEnquiryAction(
+  _prev: EnquiryState,
+  formData: FormData,
+): Promise<EnquiryState> {
+  const name = str(formData.get("name"));
+  const email = str(formData.get("email"));
+  const guests = Math.max(1, num(formData.get("guests")) || 1);
+
+  if (name.length < 2) return { ok: false, error: "Please enter your name." };
+  if (!EMAIL_RE.test(email))
+    return { ok: false, error: "Please enter a valid email address." };
+
+  addEnquiry({
+    name,
+    email,
+    guests,
+    phone: str(formData.get("phone")) || undefined,
+    preferredDate: str(formData.get("preferredDate")) || undefined,
+    message: str(formData.get("message")) || undefined,
+    tourSlug: str(formData.get("tourSlug")) || undefined,
+    tourTitle: str(formData.get("tourTitle")) || undefined,
+  });
+
+  return { ok: true };
 }

@@ -1,21 +1,43 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "@/components/sidebar";
+import { site } from "@/lib/site";
+
+const display = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Wild Costa Rica Eco-Friendly Tours — Operations",
-  description: "Eco-tour operator booking & departure management",
+  metadataBase: new URL("https://puravistatours.cr"),
+  title: {
+    default: `${site.name} — ${site.tagline}`,
+    template: `%s · ${site.name}`,
+  },
+  description: site.description,
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 overflow-x-hidden px-8 py-8">{children}</main>
-        </div>
+    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+      <body className="min-h-screen bg-sand-50 font-sans text-ink antialiased">
+        {children}
       </body>
     </html>
   );
