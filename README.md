@@ -1,8 +1,9 @@
-# Wild Costa Rica Eco-Friendly Tours — Operations
+# Pura Vista Tours
 
-An internal booking & departure management app for an eco-tour operator. Built with
-Next.js (App Router) + TypeScript + Tailwind CSS. Runs on in-memory demo data
-that reseeds whenever the server restarts — no database required.
+Marketing + enquiry website for a Costa Rica shore-excursion / day-tour operator,
+with the original internal operations tool kept alongside it. Next.js (App Router)
++ TypeScript + Tailwind CSS. All data is in-memory demo data that reseeds on server
+restart — no database.
 
 ## Getting started
 
@@ -13,31 +14,51 @@ npm run dev
 
 Open http://localhost:3000.
 
-## What's inside
+## Public site
 
-| Area        | Route            | What you can do                                              |
-| ----------- | ---------------- | ----------------------------------------------------------- |
-| Dashboard   | `/`              | KPIs, next departures, recent bookings                       |
-| Bookings    | `/bookings`      | Filter by status, open a booking, create a new one           |
-| Booking     | `/bookings/[id]` | Change booking status; record payment (unpaid/deposit/paid)  |
-| New booking | `/bookings/new`  | Pick customer + departure + party size (auto-prices)         |
-| Departures  | `/departures`    | Upcoming / past / all; seat fill; overbook warnings          |
-| Departure   | `/departures/[id]` | Passenger manifest, change status, add a booking           |
-| Tours       | `/tours`         | Catalogue; add a tour                                        |
-| Tour        | `/tours/[id]`    | Details + departures; schedule a new departure               |
-| Customers   | `/customers`     | Contact list with spend; add a customer                      |
-| Customer    | `/customers/[id]`| Profile + booking history                                    |
+| Page        | Route            | What's there                                             |
+| ----------- | ---------------- | ------------------------------------------------------- |
+| Home        | `/`              | Hero, regions, featured tours, value props, reviews, CTA |
+| Tours       | `/tours`         | All 12 tours grouped by region (Limón / Puntarenas / SJO)|
+| Tour detail | `/tours/[slug]`  | Overview, itinerary, inclusions, enquiry form, WhatsApp  |
+| About       | `/about`         | Story, regions, values                                   |
+| FAQ         | `/faq`           | Accordion + `FAQPage` JSON-LD                            |
+| Contact     | `/contact`       | Enquiry form + direct contact details                    |
 
-## Data model
+- Tour catalogue: `lib/catalog.ts` (static). Names/prices mirror a real operator
+  at the client's request; all descriptive copy is original.
+- Brand + contact constants: `lib/site.ts` — **replace the placeholder email,
+  phone, WhatsApp number and social URLs before launch.**
+- Enquiries: `submitEnquiryAction` in `app/actions.ts` → `lib/enquiries.ts`
+  (in-memory log). The form then offers WhatsApp / email as a direct follow-up.
+- Artwork is hand-built inline SVG (`components/site/tour-art.tsx`) — no image
+  files, renders identically offline. Swap for photos by editing that component
+  and `components/site/tour-card.tsx`.
 
-`lib/types.ts` — `Tour`, `Departure`, `Customer`, `Booking`.
-`lib/store.ts` — seed data, queries, and mutations (module-level singleton kept
-on `globalThis` so it survives hot reload in dev).
-`app/actions.ts` — server actions that wrap the store mutations.
+## Operations tool (internal)
+
+Moved under `/admin` (was at the root). Behaviour is unchanged.
+
+| Area        | Route                  |
+| ----------- | ---------------------- |
+| Dashboard   | `/admin`               |
+| Bookings    | `/admin/bookings`, `/admin/bookings/new`, `/admin/bookings/[id]` |
+| Departures  | `/admin/departures`, `/admin/departures/[id]` |
+| Tours       | `/admin/tours`, `/admin/tours/[id]` |
+| Customers   | `/admin/customers`, `/admin/customers/[id]` |
+
+`lib/store.ts` — seed data, queries and mutations (module singleton on
+`globalThis`). `lib/types.ts` — `Tour`, `Departure`, `Customer`, `Booking`.
+
+## Layout structure
+
+- `app/layout.tsx` — minimal root (`<html>` + fonts + metadata) only.
+- `app/(site)/layout.tsx` — public header + footer.
+- `app/admin/layout.tsx` — the operations sidebar.
 
 ## Next steps
 
-- Swap `lib/store.ts` for a real database (Postgres + Prisma / Drizzle).
-- Add auth for staff accounts.
-- Add Stripe for deposits/balance payments.
-- Enforce capacity on booking creation (currently overbooking is only flagged).
+- Swap `lib/store.ts` / `lib/enquiries.ts` for a real database.
+- Add auth for `/admin`.
+- Wire enquiries to email/CRM; optionally surface them as leads in `/admin`.
+- Replace placeholder contact details and add real photography.
