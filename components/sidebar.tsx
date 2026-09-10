@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -16,15 +17,17 @@ export function Sidebar() {
 
   return (
     <aside className="flex w-56 shrink-0 flex-col border-r border-slate-200 bg-white">
-      <div className="flex items-center gap-2 px-5 py-5">
-        <div className="grid h-8 w-8 place-items-center rounded-lg bg-emerald-700 text-sm font-bold text-white">
-          🌿
-        </div>
-        <div>
-          <div className="text-sm font-semibold text-slate-900">
-            Wild Costa Rica
-          </div>
-          <div className="text-xs text-slate-500">Eco-Friendly Tours · Ops</div>
+      <div className="px-3 pb-1 pt-4">
+        <Image
+          src="/brand-banner.jpg"
+          alt="Wild Costa Rica Eco-Friendly Tours"
+          width={2816}
+          height={1536}
+          priority
+          className="w-full rounded-lg border border-slate-200 object-cover"
+        />
+        <div className="mt-2 px-1 text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+          Operations
         </div>
       </div>
       <nav className="flex flex-col gap-1 px-3 py-2">
