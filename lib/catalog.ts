@@ -506,6 +506,24 @@ export const tours: CatalogTour[] = [
   },
 ];
 
+/** Photograph that pairs with each illustrated scene (files in /public/img/tours). */
+export const sceneImage: Record<SceneKey, string> = {
+  rainforest: "/img/tours/rainforest.jpg",
+  canals: "/img/tours/canal.jpg",
+  reef: "/img/tours/reef.jpg",
+  cacao: "/img/tours/cacao.jpg",
+  wildlife: "/img/tours/macaw.jpg",
+  pacific: "/img/tours/pacific.jpg",
+  crocodile: "/img/tours/crocodile.jpg",
+  atv: "/img/tours/atv.jpg",
+  city: "/img/tours/sanjose.jpg",
+  coffee: "/img/tours/coffee.jpg",
+  theatre: "/img/tours/theatre.jpg",
+  hero: "/img/tours/hero.jpg",
+};
+
+export const tourImage = (t: Pick<CatalogTour, "scene">) => sceneImage[t.scene];
+
 export const toursByRegion = (r: RegionSlug) =>
   tours.filter((t) => t.region === r);
 

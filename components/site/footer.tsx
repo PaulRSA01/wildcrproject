@@ -72,7 +72,7 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <a
-                href={waLink("Hi Pura Vista Tours — I have a question about your tours.")}
+                href={waLink(`Hi ${site.name} — I have a question about your tours.`)}
                 className="inline-flex items-center gap-2 text-sand-100/85 hover:text-white"
               >
                 <WhatsAppIcon width={16} height={16} /> WhatsApp

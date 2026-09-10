@@ -18,14 +18,14 @@ export interface ValueProp {
 }
 
 export const site = {
-  name: "Pura Vista Tours",
-  shortName: "Pura Vista",
-  tagline: "Costa Rica shore excursions & private day tours",
+  name: "Wild Passage EcoTours Costa Rica",
+  shortName: "Wild Passage",
+  tagline: "Costa Rica eco-tours, shore excursions & private day trips",
   description:
-    "Small-group and private day tours in Limón, Puntarenas and San José — certified local guides, premium transport and every fee included, with a guaranteed on-time return to your ship.",
+    "Small-group and private eco-tours in Limón, Puntarenas and San José — certified local guides, premium transport and every fee included, with a guaranteed on-time return to your ship.",
 
   // --- contact (placeholders) ---
-  email: "hola@puravistatours.cr", // TODO: real address
+  email: "hello@wildpassageecotours.com", // TODO: real address
   phoneDisplay: "+506 8000 0000", // TODO: real number
   whatsapp: "50680000000", // TODO: digits only, country code first, for wa.me
 
