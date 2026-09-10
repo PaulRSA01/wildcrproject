@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CatalogTour } from "@/lib/catalog";
-import { regionShort } from "@/lib/catalog";
-import { TourArt } from "@/components/site/tour-art";
+import { regionShort, tourImage } from "@/lib/catalog";
+import { TourImage } from "@/components/site/tour-image";
 import { ClockIcon, UsersIcon, CheckIcon } from "@/components/site/icons";
 
 export function TourCard({ tour }: { tour: CatalogTour }) {
@@ -11,7 +11,9 @@ export function TourCard({ tour }: { tour: CatalogTour }) {
       className="group flex flex-col overflow-hidden rounded-xl2 border border-black/5 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
-        <TourArt
+        <TourImage
+          src={tourImage(tour)}
+          alt={tour.title}
           scene={tour.scene}
           className="h-full w-full transition-transform duration-500 group-hover:scale-105"
         />

@@ -19,7 +19,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://puravistatours.cr"),
+  metadataBase: new URL("https://wildpassageecotours.com"),
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,

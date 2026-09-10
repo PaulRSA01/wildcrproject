@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/section";
 import { SectionHeading } from "@/components/site/heading";
-import { TourArt } from "@/components/site/tour-art";
+import { TourImage } from "@/components/site/tour-image";
 import { TrustBar } from "@/components/site/trust-bar";
 import { RegionCards } from "@/components/site/region-cards";
 import { TourCard } from "@/components/site/tour-card";
@@ -22,8 +22,20 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative -mt-16 flex min-h-[92vh] items-center overflow-hidden">
-        <TourArt scene="hero" className="absolute inset-0 h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-b from-jungle-900/70 via-jungle-900/40 to-jungle-900/70" />
+        <TourImage
+          src="/img/tours/hero.jpg"
+          alt="A jungle river winding through the Costa Rican rainforest"
+          scene="hero"
+          priority
+          className="absolute inset-0 h-full w-full"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(19,38,29,0.92) 0%, rgba(19,38,29,0.6) 42%, rgba(19,38,29,0.15) 100%), linear-gradient(to top, rgba(19,38,29,0.7) 0%, rgba(19,38,29,0) 55%)",
+          }}
+        />
         <Container className="relative pt-24 pb-16 text-white">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand-100/80">
             Costa Rica · Limón · Puntarenas · San José

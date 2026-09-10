@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/site/container";
 import { Reveal } from "@/components/site/section";
-import { TourArt } from "@/components/site/tour-art";
+import { TourImage } from "@/components/site/tour-image";
 import { TourCard } from "@/components/site/tour-card";
 import { EnquiryForm } from "@/components/site/enquiry-form";
 import {
@@ -20,6 +20,7 @@ import {
   tours,
   relatedTours,
   regionName,
+  tourImage,
 } from "@/lib/catalog";
 import { site, waLink, mailtoLink } from "@/lib/site";
 
@@ -58,11 +59,14 @@ export default async function TourDetailPage({
     <>
       {/* Hero band */}
       <section className="relative overflow-hidden bg-jungle-800 text-white">
-        <TourArt
+        <TourImage
+          src={tourImage(tour)}
+          alt={tour.title}
           scene={tour.scene}
-          className="absolute inset-0 h-full w-full opacity-40"
+          priority
+          className="absolute inset-0 h-full w-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-jungle-900 via-jungle-900/60 to-jungle-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-jungle-900 via-jungle-900/75 to-jungle-900/55" />
         <Container className="relative py-16 sm:py-20">
           <nav className="text-sm text-sand-100/70">
             <Link href="/tours" className="hover:text-white">
