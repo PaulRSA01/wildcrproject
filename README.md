@@ -1,4 +1,4 @@
-# Pura Vista Tours
+# Oregon Tours Costa Rica
 
 Marketing + enquiry website for a Costa Rica shore-excursion / day-tour operator,
 with the original internal operations tool kept alongside it. Next.js (App Router)

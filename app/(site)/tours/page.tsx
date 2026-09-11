@@ -9,7 +9,7 @@ import { regions, toursByRegion, tours, priceRange } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "All tours",
   description:
-    "Every Wild Passage EcoTours shore excursion and day tour in Limón, Puntarenas and San José, with prices and durations.",
+    "Every Oregon Tours Costa Rica shore excursion and day tour in Limón, Puntarenas and San José, with prices and durations.",
 };
 
 export default function ToursPage() {

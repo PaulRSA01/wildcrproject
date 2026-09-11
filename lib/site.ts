@@ -18,14 +18,14 @@ export interface ValueProp {
 }
 
 export const site = {
-  name: "Wild Passage EcoTours Costa Rica",
-  shortName: "Wild Passage",
+  name: "Oregon Tours Costa Rica",
+  shortName: "Oregon Tours",
   tagline: "Costa Rica eco-tours, shore excursions & private day trips",
   description:
     "Small-group and private eco-tours in Limón, Puntarenas and San José — certified local guides, premium transport and every fee included, with a guaranteed on-time return to your ship.",
 
   // --- contact (placeholders) ---
-  email: "hello@wildpassageecotours.com", // TODO: real address
+  email: "hello@oregontourscostarica.com", // TODO: real address
   phoneDisplay: "+506 8000 0000", // TODO: real number
   whatsapp: "50680000000", // TODO: digits only, country code first, for wa.me
 
