@@ -88,18 +88,18 @@ export default function FaqPage() {
           title="Answers before you book"
           className="mb-8"
         />
-        <div className="divide-y divide-black/10 border-y border-black/10">
+        <div className="divide-y divide-black/10 border-y border-black/10 dark:divide-white/10 dark:border-white/10">
           {faqs.map((f) => (
             <details key={f.q} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-medium text-ink">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-medium text-ink dark:text-sand-50">
                 {f.q}
                 <ChevronDownIcon
                   width={20}
                   height={20}
-                  className="shrink-0 text-ink/50 transition-transform group-open:rotate-180"
+                  className="shrink-0 text-ink/50 transition-transform group-open:rotate-180 dark:text-sand-100/50"
                 />
               </summary>
-              <p className="mt-3 max-w-prose text-sm leading-relaxed text-ink/70">
+              <p className="mt-3 max-w-prose text-sm leading-relaxed text-ink/70 dark:text-sand-100/70">
                 {f.a}
               </p>
             </details>

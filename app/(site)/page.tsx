@@ -124,7 +124,7 @@ export default function HomePage() {
       </div>
 
       {/* Featured tours */}
-      <div className="bg-white py-20">
+      <div className="bg-white py-20 dark:bg-jungle-900">
         <Container>
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-4">
@@ -166,7 +166,7 @@ export default function HomePage() {
       </Container>
 
       {/* How it works */}
-      <div className="bg-white py-20">
+      <div className="bg-white py-20 dark:bg-jungle-900">
         <Container>
           <Reveal>
             <SectionHeading

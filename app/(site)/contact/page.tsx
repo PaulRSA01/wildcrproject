@@ -35,10 +35,10 @@ export default function ContactPage() {
 
       <Container className="grid gap-12 py-16 lg:grid-cols-[1fr_20rem]">
         <div>
-          <h2 className="font-display text-2xl font-semibold text-ink">
+          <h2 className="font-display text-2xl font-semibold text-ink dark:text-sand-50">
             Send an enquiry
           </h2>
-          <p className="mt-2 text-sm text-ink/65">
+          <p className="mt-2 text-sm text-ink/65 dark:text-sand-100/65">
             No payment now — this just starts the conversation.
           </p>
           <div className="mt-6">
@@ -47,8 +47,10 @@ export default function ContactPage() {
         </div>
 
         <aside className="space-y-4">
-          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-ink">Your contact</h3>
+          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-jungle-800">
+            <h3 className="font-semibold text-ink dark:text-sand-50">
+              Your contact
+            </h3>
             <div className="mt-4 flex items-center gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -56,58 +58,80 @@ export default function ContactPage() {
                 alt="Paul Jiménez"
                 width={480}
                 height={480}
-                className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-jungle-100"
+                className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-jungle-100 dark:ring-jungle-700"
               />
               <div>
-                <p className="font-semibold text-ink">Paul Jiménez</p>
-                <p className="text-sm text-ink/65">International Operations Manager</p>
+                <p className="font-semibold text-ink dark:text-sand-50">
+                  Paul Jiménez
+                </p>
+                <p className="text-sm text-ink/65 dark:text-sand-100/65">
+                  International Operations Manager
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-ink">Reach us directly</h3>
+          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-jungle-800">
+            <h3 className="font-semibold text-ink dark:text-sand-50">
+              Reach us directly
+            </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
                   href={waLink(`Hi ${site.name}, I'd like to plan a tour.`)}
-                  className="inline-flex items-center gap-2.5 text-ink/80 hover:text-jungle-700"
+                  className="inline-flex items-center gap-2.5 text-ink/80 hover:text-jungle-700 dark:text-sand-100/85 dark:hover:text-sand-50"
                 >
-                  <WhatsAppIcon width={18} height={18} className="text-jungle-600" />
+                  <WhatsAppIcon
+                    width={18}
+                    height={18}
+                    className="text-jungle-600 dark:text-jungle-300"
+                  />
                   WhatsApp chat
                 </a>
               </li>
               <li>
                 <a
                   href={mailtoLink("Tour enquiry")}
-                  className="inline-flex items-center gap-2.5 text-ink/80 hover:text-jungle-700"
+                  className="inline-flex items-center gap-2.5 text-ink/80 hover:text-jungle-700 dark:text-sand-100/85 dark:hover:text-sand-50"
                 >
-                  <MailIcon width={18} height={18} className="text-jungle-600" />
+                  <MailIcon
+                    width={18}
+                    height={18}
+                    className="text-jungle-600 dark:text-jungle-300"
+                  />
                   {site.email}
                 </a>
               </li>
               <li>
                 <a
                   href={telLink}
-                  className="inline-flex items-center gap-2.5 text-ink/80 hover:text-jungle-700"
+                  className="inline-flex items-center gap-2.5 text-ink/80 hover:text-jungle-700 dark:text-sand-100/85 dark:hover:text-sand-50"
                 >
-                  <PhoneIcon width={18} height={18} className="text-jungle-600" />
+                  <PhoneIcon
+                    width={18}
+                    height={18}
+                    className="text-jungle-600 dark:text-jungle-300"
+                  />
                   {site.phoneDisplay}
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm text-sm text-ink/70">
+          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm text-sm text-ink/70 dark:border-white/10 dark:bg-jungle-800 dark:text-sand-100/75">
             <p className="flex items-center gap-2.5">
-              <ClockIcon width={18} height={18} className="text-jungle-600" />
+              <ClockIcon
+                width={18}
+                height={18}
+                className="text-jungle-600 dark:text-jungle-300"
+              />
               Replies {site.responseTime}
             </p>
             <p className="mt-3 flex items-start gap-2.5">
               <ShipIcon
                 width={18}
                 height={18}
-                className="mt-0.5 shrink-0 text-jungle-600"
+                className="mt-0.5 shrink-0 text-jungle-600 dark:text-jungle-300"
               />
               Cruise pickups at the Puerto Limón and Puntarenas piers. San José
               tours meet in the city centre.

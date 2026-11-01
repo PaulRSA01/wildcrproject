@@ -24,19 +24,21 @@ export function Testimonials() {
       {quotes.map((q) => (
         <figure
           key={q.name}
-          className="flex flex-col rounded-xl2 border border-black/5 bg-white p-6 shadow-sm"
+          className="flex flex-col rounded-xl2 border border-black/5 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-jungle-800"
         >
           <div className="flex gap-0.5 text-sunset-500">
             {Array.from({ length: 5 }).map((_, i) => (
               <StarIcon key={i} width={16} height={16} />
             ))}
           </div>
-          <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-ink/75">
+          <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-ink/75 dark:text-sand-100/80">
             &ldquo;{q.text}&rdquo;
           </blockquote>
-          <figcaption className="mt-4 text-sm font-semibold text-ink">
+          <figcaption className="mt-4 text-sm font-semibold text-ink dark:text-sand-50">
             {q.name}
-            <span className="block text-xs font-normal text-ink/55">{q.from}</span>
+            <span className="block text-xs font-normal text-ink/55 dark:text-sand-100/55">
+              {q.from}
+            </span>
           </figcaption>
         </figure>
       ))}

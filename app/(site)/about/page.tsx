@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <SectionHeading eyebrow="Our story" title="Why we do it this way" />
-              <div className="mt-4 space-y-4 text-ink/75">
+              <div className="mt-4 space-y-4 text-ink/75 dark:text-sand-100/75">
                 <p>
                   Costa Rica is small enough to see a lot in a day and fragile
                   enough that how you see it matters. We keep groups small, work
@@ -66,12 +66,14 @@ export default function AboutPage() {
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-xl2 border border-black/5 bg-white p-5 text-center shadow-sm"
+                  className="rounded-xl2 border border-black/5 bg-white p-5 text-center shadow-sm dark:border-white/10 dark:bg-jungle-800"
                 >
-                  <div className="font-display text-3xl font-semibold text-jungle-700">
+                  <div className="font-display text-3xl font-semibold text-jungle-700 dark:text-jungle-300">
                     {s.value}
                   </div>
-                  <div className="mt-1 text-xs text-ink/60">{s.label}</div>
+                  <div className="mt-1 text-xs text-ink/60 dark:text-sand-100/60">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -79,7 +81,7 @@ export default function AboutPage() {
         </Reveal>
       </Container>
 
-      <div className="bg-white py-16">
+      <div className="bg-white py-16 dark:bg-jungle-900">
         <Container>
           <Reveal>
             <SectionHeading
@@ -92,15 +94,15 @@ export default function AboutPage() {
               <Reveal
                 as="article"
                 key={r.slug}
-                className="rounded-xl2 border border-black/5 bg-sand-50 p-6"
+                className="rounded-xl2 border border-black/5 bg-sand-50 p-6 dark:border-white/10 dark:bg-jungle-800"
               >
-                <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-jungle-600">
+                <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-jungle-600 dark:text-jungle-300">
                   <PinIcon width={14} height={14} /> {r.short}
                 </p>
-                <h3 className="mt-2 font-display text-lg font-semibold text-ink">
+                <h3 className="mt-2 font-display text-lg font-semibold text-ink dark:text-sand-50">
                   {r.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/65">
+                <p className="mt-2 text-sm leading-relaxed text-ink/65 dark:text-sand-100/70">
                   {r.blurb}
                 </p>
                 <Link

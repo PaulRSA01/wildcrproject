@@ -14,20 +14,20 @@ export function TrustBar({ variant = "light" }: { variant?: "light" | "onDark" }
       className={`grid grid-cols-2 gap-px overflow-hidden rounded-xl2 border md:grid-cols-4 ${
         onDark
           ? "border-white/15 bg-white/10 text-white"
-          : "border-black/5 bg-black/5 text-ink"
+          : "border-black/5 bg-black/5 text-ink dark:border-white/15 dark:bg-white/10 dark:text-sand-50"
       }`}
     >
       {items.map(({ icon: Icon, label }) => (
         <div
           key={label}
           className={`flex items-center justify-center gap-2.5 px-4 py-4 text-center text-sm font-medium ${
-            onDark ? "bg-jungle-800" : "bg-white"
+            onDark ? "bg-jungle-800" : "bg-white dark:bg-jungle-800"
           }`}
         >
           <Icon
             width={18}
             height={18}
-            className={onDark ? "text-sunset-400" : "text-jungle-600"}
+            className={onDark ? "text-sunset-400" : "text-jungle-600 dark:text-sunset-400"}
           />
           {label}
         </div>

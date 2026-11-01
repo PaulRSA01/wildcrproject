@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/site/logo";
 import { MenuIcon, CloseIcon } from "@/components/site/icons";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 
 const links = [
   { href: "/tours", label: "Tours" },
@@ -36,7 +37,7 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         solid
-          ? "border-b border-black/5 bg-sand-50/90 backdrop-blur"
+          ? "border-b border-black/5 bg-sand-50/90 backdrop-blur dark:border-white/10 dark:bg-jungle-900/90"
           : "bg-transparent"
       }`}
     >
@@ -49,54 +50,60 @@ export function SiteHeader() {
           <span className="sr-only">Home</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
-          {links.map((l) => {
-            const active = pathname === l.href || pathname.startsWith(`${l.href}/`);
-            return (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  solid
-                    ? active
-                      ? "text-jungle-700"
-                      : "text-ink/70 hover:text-ink"
-                    : "text-white/85 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </Link>
-            );
-          })}
-          <Link
-            href="/contact"
-            className="ml-2 rounded-full bg-jungle-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-jungle-700"
-          >
-            Plan my trip
-          </Link>
-        </nav>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <nav className="hidden items-center gap-1 md:flex">
+            {links.map((l) => {
+              const active = pathname === l.href || pathname.startsWith(`${l.href}/`);
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                    solid
+                      ? active
+                        ? "text-jungle-700"
+                        : "text-ink/70 hover:text-ink dark:text-sand-100/70 dark:hover:text-sand-50"
+                      : "text-white/85 hover:text-white"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              );
+            })}
+            <Link
+              href="/contact"
+              className="ml-2 rounded-full bg-jungle-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-jungle-700"
+            >
+              Plan my trip
+            </Link>
+          </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          className={`rounded-lg p-2 md:hidden ${
-            solid ? "text-ink" : "text-white"
-          }`}
-        >
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </button>
+          <ThemeToggle
+            className={solid ? "text-ink dark:text-sand-50" : "text-white"}
+          />
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className={`rounded-lg p-2 md:hidden ${
+              solid ? "text-ink dark:text-sand-50" : "text-white"
+            }`}
+          >
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="border-t border-black/5 bg-sand-50 md:hidden">
+        <div className="border-t border-black/5 bg-sand-50 dark:border-white/10 dark:bg-jungle-900 md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-ink/80 hover:bg-jungle-50"
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-ink/80 hover:bg-jungle-50 dark:text-sand-100/80 dark:hover:bg-jungle-800"
               >
                 {l.label}
               </Link>
