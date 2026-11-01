@@ -40,12 +40,12 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-48 max-w-6xl items-center justify-between px-5 sm:h-56 sm:px-8">
         <Link
           href="/"
           className={`transition-colors ${solid ? "text-jungle-700" : "text-white"}`}
         >
-          <Logo />
+          <Logo size="lg" />
           <span className="sr-only">Home</span>
         </Link>
 
