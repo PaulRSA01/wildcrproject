@@ -33,10 +33,18 @@ export const metadata: Metadata = {
   },
 };
 
+// Runs before paint so the stored (or system) theme preference is applied
+// with no flash of the wrong theme. Kept tiny and defensive — storage can
+// be unavailable (private browsing, blocked) and must never break the page.
+const themeInitScript = `(function(){try{var k="eco-pulse-theme",s=localStorage.getItem(k),d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="min-h-screen bg-sand-50 font-sans text-ink antialiased">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-screen bg-sand-50 font-sans text-ink antialiased transition-colors duration-300 dark:bg-jungle-900 dark:text-sand-50">
         {children}
       </body>
     </html>

@@ -6,6 +6,10 @@
   color-scheme: light;
 }
 
+:root.dark {
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
   /* offset anchored sections so they clear the sticky header */

@@ -8,7 +8,7 @@ export function TourCard({ tour }: { tour: CatalogTour }) {
   return (
     <Link
       href={`/tours/${tour.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl2 border border-black/5 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+      className="group flex flex-col overflow-hidden rounded-xl2 border border-black/5 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-jungle-800"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <TourImage
@@ -26,13 +26,13 @@ export function TourCard({ tour }: { tour: CatalogTour }) {
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-lg font-semibold leading-snug text-ink">
+        <h3 className="font-display text-lg font-semibold leading-snug text-ink dark:text-sand-50">
           {tour.title}
         </h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/65">
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/65 dark:text-sand-100/70">
           {tour.tagline}
         </p>
-        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ink/60">
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ink/60 dark:text-sand-100/60">
           <span className="inline-flex items-center gap-1.5">
             <ClockIcon width={15} height={15} /> {tour.durationHours}
           </span>
@@ -40,7 +40,7 @@ export function TourCard({ tour }: { tour: CatalogTour }) {
             <UsersIcon width={15} height={15} /> {tour.groupType}
           </span>
           {tour.freeCancellation && (
-            <span className="inline-flex items-center gap-1.5 text-jungle-600">
+            <span className="inline-flex items-center gap-1.5 text-jungle-600 dark:text-jungle-300">
               <CheckIcon width={15} height={15} /> Free cancellation
             </span>
           )}

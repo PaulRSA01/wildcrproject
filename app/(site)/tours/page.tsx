@@ -54,16 +54,16 @@ export default function ToursPage() {
           >
             <Reveal>
               <div className="max-w-2xl">
-                <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-jungle-600">
+                <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-jungle-600 dark:text-jungle-300">
                   <PinIcon width={15} height={15} /> {r.kind}
                 </p>
-                <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink">
+                <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink dark:text-sand-50">
                   {r.name}
                 </h2>
-                <p className="mt-3 text-base leading-relaxed text-ink/70">
+                <p className="mt-3 text-base leading-relaxed text-ink/70 dark:text-sand-100/70">
                   {r.blurb}
                 </p>
-                <p className="mt-2 text-sm text-ink/50">
+                <p className="mt-2 text-sm text-ink/50 dark:text-sand-100/50">
                   Pickup: {r.port}
                 </p>
               </div>

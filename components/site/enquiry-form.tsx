@@ -56,14 +56,14 @@ export function EnquiryForm({
       .join(" · ");
 
     return (
-      <div className="rounded-xl2 border border-jungle-200 bg-jungle-50 p-6 text-center">
+      <div className="rounded-xl2 border border-jungle-200 bg-jungle-50 p-6 text-center dark:border-jungle-700 dark:bg-jungle-800">
         <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-jungle-600 text-white">
           <CheckIcon width={24} height={24} />
         </span>
-        <h3 className="mt-3 font-display text-lg font-semibold text-ink">
+        <h3 className="mt-3 font-display text-lg font-semibold text-ink dark:text-sand-50">
           Thanks, {form.name.split(" ")[0] || "traveller"}!
         </h3>
-        <p className="mx-auto mt-1 max-w-sm text-sm text-ink/70">
+        <p className="mx-auto mt-1 max-w-sm text-sm text-ink/70 dark:text-sand-100/75">
           Your enquiry is in. We usually reply {site.responseTime}. Want a faster
           answer? Reach us directly:
         </p>
@@ -81,7 +81,7 @@ export function EnquiryForm({
               tourTitle ? `Enquiry: ${tourTitle}` : "Tour enquiry",
               summary,
             )}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-jungle-300 px-4 py-2 text-sm font-semibold text-jungle-700 hover:bg-white"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-jungle-300 px-4 py-2 text-sm font-semibold text-jungle-700 hover:bg-white dark:border-jungle-500 dark:text-jungle-200 dark:hover:bg-jungle-900"
           >
             <MailIcon width={16} height={16} /> Email
           </a>
@@ -93,10 +93,10 @@ export function EnquiryForm({
   return (
     <form
       action={formAction}
-      className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm"
+      className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-jungle-800"
     >
       {tourTitle && (
-        <p className="mb-4 rounded-lg bg-jungle-50 px-3 py-2 text-sm text-jungle-800">
+        <p className="mb-4 rounded-lg bg-jungle-50 px-3 py-2 text-sm text-jungle-800 dark:bg-jungle-900 dark:text-jungle-200">
           Enquiry for <strong>{tourTitle}</strong>
         </p>
       )}
@@ -171,7 +171,7 @@ export function EnquiryForm({
 
       <div className="mt-5">
         <SubmitButton />
-        <p className="mt-2 text-center text-xs text-ink/50">
+        <p className="mt-2 text-center text-xs text-ink/50 dark:text-sand-100/50">
           No payment now. We reply with a firm price and pickup time.
         </p>
       </div>
@@ -180,7 +180,7 @@ export function EnquiryForm({
 }
 
 const inputClass =
-  "mt-1 w-full rounded-lg border border-black/10 bg-sand-50 px-3 py-2 text-sm text-ink outline-none transition focus:border-jungle-500 focus:ring-2 focus:ring-jungle-500/20";
+  "mt-1 w-full rounded-lg border border-black/10 bg-sand-50 px-3 py-2 text-sm text-ink outline-none transition focus:border-jungle-500 focus:ring-2 focus:ring-jungle-500/20 dark:border-white/10 dark:bg-jungle-900 dark:text-sand-50";
 
 function Field({
   label,
@@ -192,7 +192,7 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label className="block text-sm font-medium text-ink/80">
+    <label className="block text-sm font-medium text-ink/80 dark:text-sand-100/80">
       {label}
       {required && <span className="text-rose-500"> *</span>}
       {children}
