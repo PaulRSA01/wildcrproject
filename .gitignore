@@ -11,3 +11,4 @@ next-env.d.ts
 
 # local image drop (source art); the used copy lives in public/
 imagenes/
+.vercel

@@ -48,6 +48,24 @@ export default function ContactPage() {
 
         <aside className="space-y-4">
           <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm">
+            <h3 className="font-semibold text-ink">Your contact</h3>
+            <div className="mt-4 flex items-center gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/img/team/paul-jimenez.jpg"
+                alt="Paul Jiménez"
+                width={480}
+                height={480}
+                className="h-16 w-16 shrink-0 rounded-full object-cover ring-2 ring-jungle-100"
+              />
+              <div>
+                <p className="font-semibold text-ink">Paul Jiménez</p>
+                <p className="text-sm text-ink/65">International Operations Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl2 border border-black/5 bg-white p-6 shadow-sm">
             <h3 className="font-semibold text-ink">Reach us directly</h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
