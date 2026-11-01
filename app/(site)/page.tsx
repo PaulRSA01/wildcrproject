@@ -21,7 +21,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative -mt-20 flex min-h-[92vh] items-center overflow-hidden">
+      <section className="relative -mt-48 flex min-h-[92vh] items-center overflow-hidden sm:-mt-56">
         <TourImage
           src="/img/tours/hero.jpg"
           alt="A jungle river winding through the Costa Rican rainforest"
