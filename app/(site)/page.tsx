@@ -87,6 +87,42 @@ export default function HomePage() {
         </Reveal>
       </Container>
 
+      {/* Wildlife spotlight */}
+      <div className="bg-jungle-800 py-20 text-white">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <Reveal className="relative aspect-[4/3] overflow-hidden rounded-xl2 lg:aspect-auto lg:h-full lg:min-h-[22rem]">
+              <TourImage
+                src="/img/tours/agami-heron.jpg"
+                alt="A wild Agami heron hunting in a rainforest stream in Sarapiquí, Costa Rica"
+                scene="wildlife"
+                className="absolute inset-0 h-full w-full"
+              />
+            </Reveal>
+            <Reveal delay={80}>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sand-100/70">
+                What you might see
+              </p>
+              <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+                The Agami heron — one of the Caribbean&rsquo;s most elusive birds
+              </h2>
+              <p className="mt-4 max-w-md text-base leading-relaxed text-sand-100/80">
+                Our canal and wetland tours move slowly and quietly for exactly
+                this reason: close, unhurried encounters with wildlife that most
+                visitors never get near, guided by naturalists who know where
+                to look.
+              </p>
+              <Link
+                href="/tours#limon"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-jungle-800 shadow-lg transition hover:bg-sand-100"
+              >
+                See wildlife tours <ArrowIcon width={16} height={16} />
+              </Link>
+            </Reveal>
+          </div>
+        </Container>
+      </div>
+
       {/* Featured tours */}
       <div className="bg-white py-20">
         <Container>

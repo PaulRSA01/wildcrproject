@@ -23,6 +23,8 @@ Placeholder photography for the demo. Replace with the operator's own photos bef
 | File | Source | Author | License |
 | --- | --- | --- | --- |
 | `theatre.jpg` | Teatro Nacional de Costa Rica (Wikimedia Commons) | Mario Roberto Durán Ortiz (Mariordo) | CC BY-SA 4.0 |
+| `agami-heron.jpg` | Agami heron, Selva Verde Lodge, Sarapiquí (Wikimedia Commons) | lwolfartist | CC BY 2.0 |
 
-CC BY-SA 4.0 requires attribution and share-alike. Keep this credit, or replace
-`theatre.jpg` with an owned/licensed photo.
+CC BY-SA 4.0 and CC BY 2.0 require attribution (CC BY-SA 4.0 also requires
+share-alike). Keep these credits, or replace `theatre.jpg` / `agami-heron.jpg`
+with owned/licensed photos.

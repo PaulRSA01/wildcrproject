@@ -19,7 +19,7 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://oregontourscostarica.com"),
+  metadataBase: new URL("https://ecopulsecostarica.com"),
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,
