@@ -40,7 +40,7 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link
           href="/"
           className={`transition-colors ${solid ? "text-jungle-700" : "text-white"}`}
