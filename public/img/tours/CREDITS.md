@@ -28,3 +28,9 @@ Placeholder photography for the demo. Replace with the operator's own photos bef
 CC BY-SA 4.0 and CC BY 2.0 require attribution (CC BY-SA 4.0 also requires
 share-alike). Keep these credits, or replace `theatre.jpg` / `agami-heron.jpg`
 with owned/licensed photos.
+
+## Client-provided (not stock)
+
+- `/brand-icon.png` — the Eco Pulse Agami heron brand mark, supplied by the
+  client (background removed for use on both light and dark surfaces).
+- `/img/team/paul-jimenez.jpg` — staff photo, supplied by the client.
