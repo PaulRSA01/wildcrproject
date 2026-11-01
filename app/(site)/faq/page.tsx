@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Common questions about Oregon Tours Costa Rica: cruise timing, cancellation, group sizes, payment, kids and accessibility.",
+    "Common questions about Eco Pulse Costa Rica: cruise timing, cancellation, group sizes, payment, kids and accessibility.",
 };
 
 const faqs = [
